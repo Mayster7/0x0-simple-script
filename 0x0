@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo "No arguments provided"
+    exit 1
+fi
+
+# Post
+
+if expr "$1" : '.*://.*\..*' > /dev/null; then
+	echo 'Uploading url...'
+	/bin/curl -F"url=$1" http://0x0.st/
+else
+	echo 'Uploading file...'
+	/bin/curl -F"file=@$1" http://0x0.st/	
+fi
+
