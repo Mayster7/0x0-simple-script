@@ -1,9 +1,15 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "No arguments provided"
+    echo "No file/link name provided"
     exit 1
 fi
+
+if [ "$1" = "-h" ]; then
+	echo "Just use the command '0x0' followed by a file name or URL."
+	exit 0
+fi
+
 
 # Post
 
